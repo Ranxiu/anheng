@@ -11,3 +11,9 @@ public目录下一共有2个php文件 一个是index.php 主入口文件，一�
 
 步骤二： 运行websoket服务器   //public目录下 开启websoket服务 php start.php start
 
+
+注意事项：
+
+1.由于登录注册功能用到了jwt_token,所有在进入聊天室之前,会有token令牌检测,没有会跳转到登录页
+
+2.进入聊天室之前 请确保public目录下的start.php 已经运行
