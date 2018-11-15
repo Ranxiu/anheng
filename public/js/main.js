@@ -9,17 +9,14 @@ $().ready(function() {
                 required: true,  
                 minlength: 5  
             },
-            tel_num:{
-                required:true,
-                
-            }
         },
         messages: {  
             uname: "请输入姓名",  
             password: {  
                 required: "请输入密码",  
                 minlength:  $.validator.format("密码最少为 {0} 位"),
-            },  
+            },
+           
         }  
     });  
     $("#register_form").validate({  
@@ -29,6 +26,11 @@ $().ready(function() {
                 required: true,  
                 minlength: 5  
             },  
+            tel_num:{
+                required: true,
+                maxlength:11,
+                minlength:11
+            }  
         },  
         messages: {  
             uname: "请输入姓名",  
@@ -36,7 +38,12 @@ $().ready(function() {
                 required: "请输入密码",  
                 minlength:  $.validator.format("密码最少为 {0} 位"),
             },  
-        }  
+            tel_num:{
+                required: "请输入手机号码",
+                minlength:  $.validator.format("手机号最少为 {0} 位"),
+                maxlength:  $.validator.format("手机号最多为 {0} 位"),
+            }  
+        },  
     });  
 });  
 $(function() {  

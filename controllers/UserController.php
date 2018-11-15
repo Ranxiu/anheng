@@ -35,7 +35,8 @@ class UserController
 
         //判断是否勾选记住登录状态 没有直接登录 有则cookie保存用户信息7天时间
         if(!isset($model->data['remember']))
-        {
+        {   
+            //通过用户名和密码查询该账号是否存在 存在则登录成功 不存在登录失败并返回失败信息由前端ajax执行跳转
             $user = $model->findLoginUser($model->data['uname'],md5($model->data['password']));
             if($user){
                 //当前用户id存入SESSION
@@ -66,7 +67,7 @@ class UserController
             $user = $model->findLoginUser($model->data['uname'],md5($model->data['password']));
 
             if($user){
-                //设置setcookie
+                //设置cookie
                 setcookie('uname',$model->data['uname'],time()+604800);
                 setcookie('password',$model->data['password'],time()+604800);
                 setcookie('remember',$model->data['remember'],time()+604800);
@@ -103,6 +104,15 @@ class UserController
         //处理表单数据
         $model->fill($_POST);
 
+        $phone = $model->data['tel_num'];
+        $g = "/^1[34578]\d{9}$/"; 
+
+        if(!preg_match($g, $phone)){
+
+            echo "<script>alert('请输入合法的手机号码');location.href='/user/register'</script>";
+            
+        }
+
         //接收表单数据 后台对前台提交的数据进行判断是否存在
         if($model->data['uname']!=''&&$model->data['password']!=''&&$model->data['tel_num']!=''){
 
@@ -125,8 +135,6 @@ class UserController
     {   
         $model = new User;
         $data = $model->findAll();
-        // echo '<pre>';
-        // var_dump($data);die;
 
         return view('user/user_list',$data);
     }
