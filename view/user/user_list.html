@@ -1,0 +1,62 @@
+<!DOCTYPE html>  
+<html>  
+    <head>  
+        <meta charset="utf-8" />  
+        <title>账号注册</title>  
+        <!--用百度的静态资源库的cdn安装bootstrap环境-->  
+        <!-- Bootstrap 核心 CSS 文件 -->  
+        <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">  
+        <!--font-awesome 核心我CSS 文件-->  
+        <link href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">  
+        <!-- 在bootstrap.min.js 之前引入 -->  
+        <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>  
+        <!-- Bootstrap 核心 JavaScript 文件 -->  
+        <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>  
+        <!--jquery.validate-->  
+        <style type="text/css">  
+            body{background: url() no-repeat;background-size: <span style="font-family: 微软雅黑; rgb(239, 239, 239);">cover</span>;font-size: 16px;}  
+            .form{background: rgba(255,255,255,0.2);width:400px;margin:100px auto;}  
+            #login_form{display: block;}  
+            .fa{display: inline-block;top: 27px;left: 6px;position: relative;color: #ccc;}  
+            input[type="text"],input[type="password"]{padding-left:26px;}  
+            .checkbox{padding-left:21px;}  
+        </style>  
+    </head>  
+    <body>  
+        <div class="container" id="#app">  
+            <div class="row">  
+               <a href="/user/chat_room"><h3>进入聊天室</h3></a>
+            </div>
+            <div class="row">  
+                    <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>用户名</th>
+                                <th>电话</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach($data as $v):  ?>
+                            <tr>
+                                <td> <?=$v['uid']?></td>
+                                <td> <?=$v['uname']?> </td>
+                                <td> <?=$v['tel_num']?></td>
+                                <td>
+                                    <a href="/user/edit?uid=<?=$v['uid']?>">修改</a>|
+                                    <a href="/user/delete?uid=<?=$v['uid']?>" >删除</a>
+                                </td>
+                            </tr>
+                            <?php endforeach; ?>
+                            </tbody>
+                        </table>
+            </div>
+        </div>
+   
+    </body>  
+</html>  
+<script  type="text/javascript">
+   
+
+</script>

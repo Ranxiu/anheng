@@ -1,0 +1,50 @@
+2018-11-14 11:45:17 pid:1 Error: Class 'Timer' not found in E:\anheng\public\start.php:55
+Stack trace:
+#0 [internal function]: {closure}(Object(Workerman\Worker))
+#1 E:\anheng\public\workerman\Worker.php(2306): call_user_func(Object(Closure), Object(Workerman\Worker))
+#2 E:\anheng\public\workerman\Worker.php(1315): Workerman\Worker->run()
+#3 E:\anheng\public\workerman\Worker.php(1258): Workerman\Worker::forkWorkersForWindows()
+#4 E:\anheng\public\workerman\Worker.php(507): Workerman\Worker::forkWorkers()
+#5 E:\anheng\public\start.php(71): Workerman\Worker::runAll()
+#6 {main}
+2018-11-14 11:45:18 pid:1 Worker process terminated
+2018-11-14 11:45:31 pid:1 Error: Class 'Timer' not found in E:\anheng\public\start.php:55
+Stack trace:
+#0 [internal function]: {closure}(Object(Workerman\Worker))
+#1 E:\anheng\public\workerman\Worker.php(2306): call_user_func(Object(Closure), Object(Workerman\Worker))
+#2 E:\anheng\public\workerman\Worker.php(1315): Workerman\Worker->run()
+#3 E:\anheng\public\workerman\Worker.php(1258): Workerman\Worker::forkWorkersForWindows()
+#4 E:\anheng\public\workerman\Worker.php(507): Workerman\Worker::forkWorkers()
+#5 E:\anheng\public\start.php(71): Workerman\Worker::runAll()
+#6 {main}
+2018-11-14 11:45:32 pid:1 Worker process terminated
+2018-11-14 11:46:34 pid:1 Error: Class 'Timer' not found in E:\anheng\public\start.php:55
+Stack trace:
+#0 [internal function]: {closure}(Object(Workerman\Worker))
+#1 E:\anheng\public\workerman\Worker.php(2306): call_user_func(Object(Closure), Object(Workerman\Worker))
+#2 E:\anheng\public\workerman\Worker.php(1315): Workerman\Worker->run()
+#3 E:\anheng\public\workerman\Worker.php(1258): Workerman\Worker::forkWorkersForWindows()
+#4 E:\anheng\public\workerman\Worker.php(507): Workerman\Worker::forkWorkers()
+#5 E:\anheng\public\start.php(71): Workerman\Worker::runAll()
+#6 {main}
+2018-11-14 11:46:35 pid:1 Worker process terminated
+2018-11-14 11:47:02 pid:1 Error: Class 'Timer' not found in E:\anheng\public\start.php:55
+Stack trace:
+#0 [internal function]: {closure}(Object(Workerman\Worker))
+#1 E:\anheng\public\workerman\Worker.php(2306): call_user_func(Object(Closure), Object(Workerman\Worker))
+#2 E:\anheng\public\workerman\Worker.php(1315): Workerman\Worker->run()
+#3 E:\anheng\public\workerman\Worker.php(1258): Workerman\Worker::forkWorkersForWindows()
+#4 E:\anheng\public\workerman\Worker.php(507): Workerman\Worker::forkWorkers()
+#5 E:\anheng\public\start.php(71): Workerman\Worker::runAll()
+#6 {main}
+2018-11-14 11:47:03 pid:1 Worker process terminated
+2018-11-14 11:47:22 pid:1 Error: Class 'Timer' not found in E:\anheng\public\start.php:55
+Stack trace:
+#0 [internal function]: {closure}(Object(Workerman\Worker))
+#1 E:\anheng\public\workerman\Worker.php(2306): call_user_func(Object(Closure), Object(Workerman\Worker))
+#2 E:\anheng\public\workerman\Worker.php(1315): Workerman\Worker->run()
+#3 E:\anheng\public\workerman\Worker.php(1258): Workerman\Worker::forkWorkersForWindows()
+#4 E:\anheng\public\workerman\Worker.php(507): Workerman\Worker::forkWorkers()
+#5 E:\anheng\public\start.php(71): Workerman\Worker::runAll()
+#6 {main}
+2018-11-14 11:47:23 pid:1 Worker process terminated
