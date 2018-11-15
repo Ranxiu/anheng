@@ -27,6 +27,11 @@ $worker->count = 1;
 $userConn = [];
 
 
+//定义数组（二维数组）保存所有聊天记录 0下标表示群发 其他下标对应私聊对象
+
+$allmessages = [];
+
+
 //当客户端连接的时候的处理逻辑
 $worker->onConnect = function ($connection) {
 
@@ -61,7 +66,7 @@ $worker->onConnect = function ($connection) {
 // 接收消息
 $worker->onMessage = function($connection, $data) {
     global $worker;
-
+    global $allmessages;
     /* 从消息中解析出第一个:前面的内容，以判断是群发还是单发 */
     // 根据 : 将字符串转成数组
     $ret = explode(':', $data);
@@ -76,15 +81,18 @@ $worker->onMessage = function($connection, $data) {
     {
         // 群发
         // 循环所有的客户端，给它们发消息
+        $allmessages['all'][]=$connection->uname.'对所有人说:'.$rawData;
         foreach($worker->connections as $c)
         {
             $c->send(json_encode([
                 'type'=>'message',
                 'message'=>$connection->uname.'对所有人说:'.$rawData,
                 'to'=>'0',
+                'allmessages'=>$allmessages,
             ]));
         }
-
+       
+        // var_dump($allmessages);
         try{
             //通过pdo创建数据库连接
             $db = new PDO("mysql:host=localhost;dbname=user_system",'root','573511');
@@ -96,7 +104,8 @@ $worker->onMessage = function($connection, $data) {
         }catch(PDOException $e){
             echo "mysql connection fail. ".$e->getMessage();
         }
-        $count = $db->exec("INSERT INTO chat(`uid`,`uname`,`to_id`,`to_name`,`message`) VALUES($connection->uid,'{$connection->uname}','0','所有人',$rawData)");
+        //var_dump("INSERT INTO chat(`uid`,`uname`,`to_id`,`to_name`,`message`) VALUES($connection->uid,'{$connection->uname}','0','所有人','{$rawData}')");
+        $count = $db->exec("INSERT INTO chat(`uid`,`uname`,`to_id`,`to_name`,`message`) VALUES($connection->uid,'{$connection->uname}','0','所有人','{$rawData}')");
         //清空数据库对象资源
         $db = null;
     }
@@ -114,12 +123,17 @@ $worker->onMessage = function($connection, $data) {
             ]));
          
         }else{
+            //把XXX和当前客户端的聊天记录插入以当前客户端uid为下标的二维数组中
+            $allmessages[$connection->uid][]= $connection->uname.'对你说:'.$rawData;
+
             $userConn[$code]->send(json_encode([
                 'type'=>'message',
                 'message'=>$connection->uname.'对你说:'.$rawData,
-                'to'=>$code
-
+                'to'=>$code,
+                'allmessages'=>$allmessages,
             ]));
+          
+          
             try{
                 //通过pdo创建数据库连接
                 $db = new PDO("mysql:host=localhost;dbname=user_system",'root','573511');
@@ -131,19 +145,29 @@ $worker->onMessage = function($connection, $data) {
             }catch(PDOException $e){
                 echo "mysql connection fail. ".$e->getMessage();
             }
+
+            //把当前客户端和对方的聊天记录插入以对方uid（$code）为下标的二维数组中
+            $allmessages[$code][]= '你对'.$userConn[$code]->uname.'说:'.$rawData;
             //单向插入聊天记录 
             // $count = $db->exec("INSERT INTO chat(`uid`,`uname`,`to_id`,`to_name`,`message`) VALUES({$userConn[$code]->uid},'{$userConn[$code]->uname}',$connection->uid,'{$connection->uname}',$rawData)");
             $connection->send(json_encode([
                 'type'=>'message',
                 'message'=>'你对'.$userConn[$code]->uname.'说:'.$rawData,
-                'to'=>$connection->uid
+                'to'=>$connection->uid,
+                'allmessages'=>$allmessages,
             ]));
-
-            $count = $db->exec("INSERT INTO chat(`uid`,`uname`,`to_id`,`to_name`,`message`) VALUES($connection->uid,'{$connection->uname}',{$userConn[$code]->uid},'{$userConn[$code]->uname}',$rawData)");
+            // var_dump($rawData);
+            $count = $db->exec("INSERT INTO chat(`uid`,`uname`,`to_id`,`to_name`,`message`) VALUES($connection->uid,'{$connection->uname}',{$userConn[$code]->uid},'{$userConn[$code]->uname}','{$rawData}')");
             $db = null;
         }
     }    
 };
+
+// $worker->onClose = function($connection)
+// {
+   
+// };
+
 
 // 运行
 Worker::runAll();

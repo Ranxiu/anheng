@@ -358,3 +358,157 @@ Stack trace:
 2018-11-14 16:09:33 pid:1 Worker process terminated with ERROR: E_RECOVERABLE_ERROR "Object of class Workerman\Connection\TcpConnection could not be converted to string in E:\anheng\public\start.php on line 145"
 2018-11-14 16:11:56 pid:1 Worker process terminated with ERROR: E_RECOVERABLE_ERROR "Object of class Workerman\Connection\TcpConnection could not be converted to string in E:\anheng\public\start.php on line 145"
 2018-11-14 16:12:45 pid:1 Worker process terminated with ERROR: E_RECOVERABLE_ERROR "Object of class Workerman\Connection\TcpConnection could not be converted to string in E:\anheng\public\start.php on line 155"
+2018-11-15 03:22:58 pid:1 PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column '大萨达' in 'field list' in E:\anheng\public\start.php:158
+Stack trace:
+#0 E:\anheng\public\start.php(158): PDO->exec('INSERT INTO cha...')
+#1 [internal function]: {closure}(Object(Workerman\Connection\TcpConnection), '3:\xE5\xA4\xA7\xE8\x90\xA8\xE8\xBE\xBE')
+#2 E:\anheng\vendor\workerman\workerman\Connection\TcpConnection.php(650): call_user_func(Object(Closure), Object(Workerman\Connection\TcpConnection), '3:\xE5\xA4\xA7\xE8\x90\xA8\xE8\xBE\xBE')
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #21)
+#4 E:\anheng\vendor\workerman\workerman\Events\Select.php(295): call_user_func_array(Array, Array)
+#5 E:\anheng\vendor\workerman\workerman\Worker.php(2322): Workerman\Events\Select->loop()
+#6 E:\anheng\vendor\workerman\workerman\Worker.php(1315): Workerman\Worker->run()
+#7 E:\anheng\vendor\workerman\workerman\Worker.php(1258): Workerman\Worker::forkWorkersForWindows()
+#8 E:\anheng\vendor\workerman\workerman\Worker.php(507): Workerman\Worker::forkWorkers()
+#9 E:\anheng\public\start.php(165): Workerman\Worker::runAll()
+#10 {main}
+2018-11-15 03:22:58 pid:1 Worker process terminated
+2018-11-15 03:37:02 pid:1 PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column '大萨达' in 'field list' in E:\anheng\public\start.php:156
+Stack trace:
+#0 E:\anheng\public\start.php(156): PDO->exec('INSERT INTO cha...')
+#1 [internal function]: {closure}(Object(Workerman\Connection\TcpConnection), '2:\xE5\xA4\xA7\xE8\x90\xA8\xE8\xBE\xBE')
+#2 E:\anheng\vendor\workerman\workerman\Connection\TcpConnection.php(650): call_user_func(Object(Closure), Object(Workerman\Connection\TcpConnection), '2:\xE5\xA4\xA7\xE8\x90\xA8\xE8\xBE\xBE')
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #29)
+#4 E:\anheng\vendor\workerman\workerman\Events\Select.php(295): call_user_func_array(Array, Array)
+#5 E:\anheng\vendor\workerman\workerman\Worker.php(2322): Workerman\Events\Select->loop()
+#6 E:\anheng\vendor\workerman\workerman\Worker.php(1315): Workerman\Worker->run()
+#7 E:\anheng\vendor\workerman\workerman\Worker.php(1258): Workerman\Worker::forkWorkersForWindows()
+#8 E:\anheng\vendor\workerman\workerman\Worker.php(507): Workerman\Worker::forkWorkers()
+#9 E:\anheng\public\start.php(169): Workerman\Worker::runAll()
+#10 {main}
+2018-11-15 03:37:02 pid:1 Worker process terminated
+2018-11-15 03:41:17 pid:1 PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column '我是嘿嘿啊' in 'field list' in E:\anheng\public\start.php:156
+Stack trace:
+#0 E:\anheng\public\start.php(156): PDO->exec('INSERT INTO cha...')
+#1 [internal function]: {closure}(Object(Workerman\Connection\TcpConnection), '2:\xE6\x88\x91\xE6\x98\xAF\xE5\x98\xBF\xE5\x98\xBF\xE5...')
+#2 E:\anheng\vendor\workerman\workerman\Connection\TcpConnection.php(650): call_user_func(Object(Closure), Object(Workerman\Connection\TcpConnection), '2:\xE6\x88\x91\xE6\x98\xAF\xE5\x98\xBF\xE5\x98\xBF\xE5...')
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #21)
+#4 E:\anheng\vendor\workerman\workerman\Events\Select.php(295): call_user_func_array(Array, Array)
+#5 E:\anheng\vendor\workerman\workerman\Worker.php(2322): Workerman\Events\Select->loop()
+#6 E:\anheng\vendor\workerman\workerman\Worker.php(1315): Workerman\Worker->run()
+#7 E:\anheng\vendor\workerman\workerman\Worker.php(1258): Workerman\Worker::forkWorkersForWindows()
+#8 E:\anheng\vendor\workerman\workerman\Worker.php(507): Workerman\Worker::forkWorkers()
+#9 E:\anheng\public\start.php(169): Workerman\Worker::runAll()
+#10 {main}
+2018-11-15 03:41:17 pid:1 Worker process terminated
+2018-11-15 03:41:40 pid:1 PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sdasdasddddddddddd' in 'field list' in E:\anheng\public\start.php:156
+Stack trace:
+#0 E:\anheng\public\start.php(156): PDO->exec('INSERT INTO cha...')
+#1 [internal function]: {closure}(Object(Workerman\Connection\TcpConnection), '2:sdasdasdddddd...')
+#2 E:\anheng\vendor\workerman\workerman\Connection\TcpConnection.php(650): call_user_func(Object(Closure), Object(Workerman\Connection\TcpConnection), '2:sdasdasdddddd...')
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #25)
+#4 E:\anheng\vendor\workerman\workerman\Events\Select.php(295): call_user_func_array(Array, Array)
+#5 E:\anheng\vendor\workerman\workerman\Worker.php(2322): Workerman\Events\Select->loop()
+#6 E:\anheng\vendor\workerman\workerman\Worker.php(1315): Workerman\Worker->run()
+#7 E:\anheng\vendor\workerman\workerman\Worker.php(1258): Workerman\Worker::forkWorkersForWindows()
+#8 E:\anheng\vendor\workerman\workerman\Worker.php(507): Workerman\Worker::forkWorkers()
+#9 E:\anheng\public\start.php(169): Workerman\Worker::runAll()
+#10 {main}
+2018-11-15 03:41:40 pid:1 Worker process terminated
+2018-11-15 03:42:11 pid:1 PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column '阿打算' in 'field list' in E:\anheng\public\start.php:105
+Stack trace:
+#0 E:\anheng\public\start.php(105): PDO->exec('INSERT INTO cha...')
+#1 [internal function]: {closure}(Object(Workerman\Connection\TcpConnection), 'all:\xE9\x98\xBF\xE6\x89\x93\xE7\xAE\x97\n')
+#2 E:\anheng\vendor\workerman\workerman\Connection\TcpConnection.php(650): call_user_func(Object(Closure), Object(Workerman\Connection\TcpConnection), 'all:\xE9\x98\xBF\xE6\x89\x93\xE7\xAE\x97\n')
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #25)
+#4 E:\anheng\vendor\workerman\workerman\Events\Select.php(295): call_user_func_array(Array, Array)
+#5 E:\anheng\vendor\workerman\workerman\Worker.php(2322): Workerman\Events\Select->loop()
+#6 E:\anheng\vendor\workerman\workerman\Worker.php(1315): Workerman\Worker->run()
+#7 E:\anheng\vendor\workerman\workerman\Worker.php(1258): Workerman\Worker::forkWorkersForWindows()
+#8 E:\anheng\vendor\workerman\workerman\Worker.php(507): Workerman\Worker::forkWorkers()
+#9 E:\anheng\public\start.php(169): Workerman\Worker::runAll()
+#10 {main}
+2018-11-15 03:42:11 pid:1 Worker process terminated
+2018-11-15 03:44:10 pid:1 PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column '大萨达' in 'field list' in E:\anheng\public\start.php:105
+Stack trace:
+#0 E:\anheng\public\start.php(105): PDO->exec('INSERT INTO cha...')
+#1 [internal function]: {closure}(Object(Workerman\Connection\TcpConnection), 'all:\xE5\xA4\xA7\xE8\x90\xA8\xE8\xBE\xBE')
+#2 E:\anheng\vendor\workerman\workerman\Connection\TcpConnection.php(650): call_user_func(Object(Closure), Object(Workerman\Connection\TcpConnection), 'all:\xE5\xA4\xA7\xE8\x90\xA8\xE8\xBE\xBE')
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #21)
+#4 E:\anheng\vendor\workerman\workerman\Events\Select.php(295): call_user_func_array(Array, Array)
+#5 E:\anheng\vendor\workerman\workerman\Worker.php(2322): Workerman\Events\Select->loop()
+#6 E:\anheng\vendor\workerman\workerman\Worker.php(1315): Workerman\Worker->run()
+#7 E:\anheng\vendor\workerman\workerman\Worker.php(1258): Workerman\Worker::forkWorkersForWindows()
+#8 E:\anheng\vendor\workerman\workerman\Worker.php(507): Workerman\Worker::forkWorkers()
+#9 E:\anheng\public\start.php(170): Workerman\Worker::runAll()
+#10 {main}
+2018-11-15 03:44:10 pid:1 Worker process terminated
+2018-11-15 03:50:42 pid:1 PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column '大萨达所' in 'field list' in E:\anheng\public\start.php:106
+Stack trace:
+#0 E:\anheng\public\start.php(106): PDO->exec('INSERT INTO cha...')
+#1 [internal function]: {closure}(Object(Workerman\Connection\TcpConnection), 'all:\xE5\xA4\xA7\xE8\x90\xA8\xE8\xBE\xBE\xE6\x89...')
+#2 E:\anheng\vendor\workerman\workerman\Connection\TcpConnection.php(650): call_user_func(Object(Closure), Object(Workerman\Connection\TcpConnection), 'all:\xE5\xA4\xA7\xE8\x90\xA8\xE8\xBE\xBE\xE6\x89...')
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #40)
+#4 E:\anheng\vendor\workerman\workerman\Events\Select.php(295): call_user_func_array(Array, Array)
+#5 E:\anheng\vendor\workerman\workerman\Worker.php(2322): Workerman\Events\Select->loop()
+#6 E:\anheng\vendor\workerman\workerman\Worker.php(1315): Workerman\Worker->run()
+#7 E:\anheng\vendor\workerman\workerman\Worker.php(1258): Workerman\Worker::forkWorkersForWindows()
+#8 E:\anheng\vendor\workerman\workerman\Worker.php(507): Workerman\Worker::forkWorkers()
+#9 E:\anheng\public\start.php(171): Workerman\Worker::runAll()
+#10 {main}
+2018-11-15 03:50:42 pid:1 Worker process terminated
+2018-11-15 03:51:43 pid:1 PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column '大萨达所' in 'field list' in E:\anheng\public\start.php:106
+Stack trace:
+#0 E:\anheng\public\start.php(106): PDO->exec('INSERT INTO cha...')
+#1 [internal function]: {closure}(Object(Workerman\Connection\TcpConnection), 'all:\xE5\xA4\xA7\xE8\x90\xA8\xE8\xBE\xBE\xE6\x89...')
+#2 E:\anheng\vendor\workerman\workerman\Connection\TcpConnection.php(650): call_user_func(Object(Closure), Object(Workerman\Connection\TcpConnection), 'all:\xE5\xA4\xA7\xE8\x90\xA8\xE8\xBE\xBE\xE6\x89...')
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #28)
+#4 E:\anheng\vendor\workerman\workerman\Events\Select.php(295): call_user_func_array(Array, Array)
+#5 E:\anheng\vendor\workerman\workerman\Worker.php(2322): Workerman\Events\Select->loop()
+#6 E:\anheng\vendor\workerman\workerman\Worker.php(1315): Workerman\Worker->run()
+#7 E:\anheng\vendor\workerman\workerman\Worker.php(1258): Workerman\Worker::forkWorkersForWindows()
+#8 E:\anheng\vendor\workerman\workerman\Worker.php(507): Workerman\Worker::forkWorkers()
+#9 E:\anheng\public\start.php(171): Workerman\Worker::runAll()
+#10 {main}
+2018-11-15 03:51:43 pid:1 Worker process terminated
+2018-11-15 04:45:50 pid:1 PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column '打' in 'field list' in E:\anheng\public\start.php:108
+Stack trace:
+#0 E:\anheng\public\start.php(108): PDO->exec('INSERT INTO cha...')
+#1 [internal function]: {closure}(Object(Workerman\Connection\TcpConnection), 'all:\xE6\x89\x93')
+#2 E:\anheng\vendor\workerman\workerman\Connection\TcpConnection.php(650): call_user_func(Object(Closure), Object(Workerman\Connection\TcpConnection), 'all:\xE6\x89\x93')
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #33)
+#4 E:\anheng\vendor\workerman\workerman\Events\Select.php(295): call_user_func_array(Array, Array)
+#5 E:\anheng\vendor\workerman\workerman\Worker.php(2322): Workerman\Events\Select->loop()
+#6 E:\anheng\vendor\workerman\workerman\Worker.php(1315): Workerman\Worker->run()
+#7 E:\anheng\vendor\workerman\workerman\Worker.php(1258): Workerman\Worker::forkWorkersForWindows()
+#8 E:\anheng\vendor\workerman\workerman\Worker.php(507): Workerman\Worker::forkWorkers()
+#9 E:\anheng\public\start.php(173): Workerman\Worker::runAll()
+#10 {main}
+2018-11-15 04:45:50 pid:1 Worker process terminated
+2018-11-15 04:48:21 pid:1 PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column '大萨达' in 'field list' in E:\anheng\public\start.php:108
+Stack trace:
+#0 E:\anheng\public\start.php(108): PDO->exec('INSERT INTO cha...')
+#1 [internal function]: {closure}(Object(Workerman\Connection\TcpConnection), 'all:\xE5\xA4\xA7\xE8\x90\xA8\xE8\xBE\xBE')
+#2 E:\anheng\vendor\workerman\workerman\Connection\TcpConnection.php(650): call_user_func(Object(Closure), Object(Workerman\Connection\TcpConnection), 'all:\xE5\xA4\xA7\xE8\x90\xA8\xE8\xBE\xBE')
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #25)
+#4 E:\anheng\vendor\workerman\workerman\Events\Select.php(295): call_user_func_array(Array, Array)
+#5 E:\anheng\vendor\workerman\workerman\Worker.php(2322): Workerman\Events\Select->loop()
+#6 E:\anheng\vendor\workerman\workerman\Worker.php(1315): Workerman\Worker->run()
+#7 E:\anheng\vendor\workerman\workerman\Worker.php(1258): Workerman\Worker::forkWorkersForWindows()
+#8 E:\anheng\vendor\workerman\workerman\Worker.php(507): Workerman\Worker::forkWorkers()
+#9 E:\anheng\public\start.php(173): Workerman\Worker::runAll()
+#10 {main}
+2018-11-15 04:48:21 pid:1 Worker process terminated
+2018-11-15 04:49:38 pid:1 PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column '大叔大婶' in 'field list' in E:\anheng\public\start.php:108
+Stack trace:
+#0 E:\anheng\public\start.php(108): PDO->exec('INSERT INTO cha...')
+#1 [internal function]: {closure}(Object(Workerman\Connection\TcpConnection), 'all:\xE5\xA4\xA7\xE5\x8F\x94\xE5\xA4\xA7\xE5\xA9...')
+#2 E:\anheng\vendor\workerman\workerman\Connection\TcpConnection.php(650): call_user_func(Object(Closure), Object(Workerman\Connection\TcpConnection), 'all:\xE5\xA4\xA7\xE5\x8F\x94\xE5\xA4\xA7\xE5\xA9...')
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #29)
+#4 E:\anheng\vendor\workerman\workerman\Events\Select.php(295): call_user_func_array(Array, Array)
+#5 E:\anheng\vendor\workerman\workerman\Worker.php(2322): Workerman\Events\Select->loop()
+#6 E:\anheng\vendor\workerman\workerman\Worker.php(1315): Workerman\Worker->run()
+#7 E:\anheng\vendor\workerman\workerman\Worker.php(1258): Workerman\Worker::forkWorkersForWindows()
+#8 E:\anheng\vendor\workerman\workerman\Worker.php(507): Workerman\Worker::forkWorkers()
+#9 E:\anheng\public\start.php(173): Workerman\Worker::runAll()
+#10 {main}
+2018-11-15 04:49:38 pid:1 Worker process terminated

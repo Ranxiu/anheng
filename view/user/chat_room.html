@@ -74,7 +74,7 @@
 					</div>
 					<div class="office_text">
 						<ul class="user_list">
-							<li class="user_active" uid='0'  @click.stop="getData(0)">
+							<li class="user_active"   @click.stop="getData('all')">
 								<div class="user_head"><img src="/images/head/15.jpg"/></div>
 								<div class="user_text">
 									<p class="user_name">所有用户</p>
@@ -126,7 +126,11 @@
 							<ul class="content" id="chatbox">
 
 
-                                <li class="me" v-for="(v,k) in messages"><img src="/images/own_head.jpg" title="金少凯"><span>{{v}}</span></li>
+                                <li class="me" v-for="(v,k) in allmessages[to]">
+									
+										<img src="/images/own_head.jpg" title="金少凯"><span>{{v}}</span>
+									
+								</li>
                                
                                 
 							</ul>
@@ -165,8 +169,9 @@
 		data: {
 			ws: null,  // 保存 WebSocket 对象
             content:'',
-            to:0,  //发给谁
-            messages: [], // 保存所有接收的消息
+            to:'all',  //发给谁
+			messages: [], // 保存所有接收的消息
+			allmessages:'',
     	},
 		created:function(){
 
@@ -195,7 +200,7 @@
                 if(this.content=='') return
                
 			    // 判断消息是发给谁的
-                if(this.to == '0')
+                if(this.to == 'all')	
                 {
                     // 群发
                     this.ws.send( 'all:' + this.content )
@@ -230,15 +235,22 @@
 					return;
 				}else{
 					this.messages.push(data.message)
+
+					// console.log( data.allmessages)
+					this.allmessages = data.allmessages
+					console.log(this.allmessages['all']);
 				}
                     // console.log(data.message);
             },
             getData:function(e){
-                this.to = e
+				this.to = e
+				this.content = ''
 				// console.log( this.to);
             }
 		}
-	});
+	});	
+
+		var text = document.getElementById('input_box');
 		window.onload=function(){
 			function a(){
 				var si1 = document.getElementById('si_1');
@@ -247,7 +259,7 @@
 				};
 			};
 			function b(){
-				var text = document.getElementById('input_box');
+				
 				var chat = document.getElementById('chatbox');
 				var btn = document.getElementById('send');
 				var talk = document.getElementById('talkbox');
@@ -267,7 +279,6 @@
 
             $('.user_list li').removeClass('user_active');
             $(this).addClass('user_active');
-
         });
 
         

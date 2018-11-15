@@ -105,6 +105,7 @@ class UserController
         $model->fill($_POST);
 
         $phone = $model->data['tel_num'];
+        
         $g = "/^1[34578]\d{9}$/"; 
 
         if(!preg_match($g, $phone)){
